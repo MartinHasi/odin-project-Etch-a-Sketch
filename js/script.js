@@ -10,8 +10,24 @@ function createDivGrid(rows)
             const gridDiv = document.createElement('div');
             gridDiv.classList.add('gridBox');
             gridDiv.style.width = 100 / rows - .5+ '%';
-            gridDiv.style.height = rows * 3 + 'px';
-            console.log(`Row: ${i} `);
+
+            if (rows <= 20)
+            {
+                gridDiv.style.height = rows * 3 + 'px';
+            }
+            else if (rows > 21)
+            {
+                gridDiv.style.height = rows / 3 + 'px';
+            }
+            else if (rows > 40)
+            {
+                gridDiv.style.height = rows * 4 + 'px';
+            }
+            else if ( rows > 60)
+            {
+                gridDiv.style.height = rows * 5 + 'px';
+            }
+            console.log(`Row: ${i}`);
             containerDiv.appendChild(gridDiv);
         }
 }
