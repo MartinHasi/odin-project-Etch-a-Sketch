@@ -14,3 +14,14 @@
 
     border: 2px solid aqua;
 }
+button
+{
+    margin-left: 10%;
+    width:80%;
+    font-size:1.3em;
+    border-radius: 10px;
+}
+.gridBox:hover
+{
+    background-color: blue;
+}
