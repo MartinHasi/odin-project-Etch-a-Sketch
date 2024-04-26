@@ -1,18 +1,31 @@
+*
+{
+    box-sizing: border-box;
+}
+body
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 #container
 {
-    width: 100%;
-    height: 100%;
+    margin:30px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
-
-    border: 2px solid red;    
+    justify-content: center;
+    align-items: center;
+   /* border: 2px solid red; */    
 }
 .gridBox
 {
 
-    justify-content: space-around;
+    justify-content: center;
 
-    border: 2px solid aqua;
+    border: 1px solid aqua; 
 }
 button
 {
@@ -23,5 +36,5 @@ button
 }
 .gridBox:hover
 {
-    background-color: blue;
+    /*background-color: blue;*/
 }

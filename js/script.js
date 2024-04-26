@@ -1,6 +1,5 @@
 const containerDiv = document.querySelector('#container');
 const gridSizeBtn = document.querySelector('#getGridSize');
-let gridCreated = 0;
 
 function createDivGrid(rows)
 {
@@ -9,9 +8,9 @@ function createDivGrid(rows)
         {
             const gridDiv = document.createElement('div');
             gridDiv.classList.add('gridBox');
-            gridDiv.style.width = 100 / rows - .5+ '%';
+            gridDiv.style.width = gridDiv.style.height =(600 / rows) + 'px';
 
-            if (rows <= 20)
+/*          if (rows <= 20)
             {
                 gridDiv.style.height = rows * 3 + 'px';
             }
@@ -27,15 +26,20 @@ function createDivGrid(rows)
             {
                 gridDiv.style.height = rows * 5 + 'px';
             }
+*/
             console.log(`Row: ${i}`);
             containerDiv.appendChild(gridDiv);
+            gridDiv.addEventListener('mouseover', createRandomColor);
         }
+    
+        
+    
 }
 
 function getGridSize()
 {
     const gridSize = parseInt(prompt('How big should the Grid be? Max-Gridsize(100)'));
-    alert(gridSize);
+    //alert(gridSize);
     if(gridSize >100)
     {
         alert('Grid Size is to big');   
@@ -46,5 +50,21 @@ function getGridSize()
         createDivGrid(gridSize);
     }
 }
+
+function createRandomColor(e)
+{
+    //const cssBackgroundColor = 
+    let red = Math.floor(Math.random() * 256);
+    let green = Math.floor(Math.random() * 256);
+    let blue = Math.floor(Math.random() * 256);
+
+    console.log(`Red: ${red} | Green ${green} | Blue ${blue}`);
+
+     e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    
+}
+
+createDivGrid(16);
 gridSizeBtn.addEventListener('click', getGridSize);
+
 //createDivGrid(16);
